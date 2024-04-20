@@ -1,38 +1,75 @@
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
 .App {
+  display: grid;
+  gap: 16px;
+  place-content: center;
   text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  height: 100vh;
+  line-height: 1.5;
+  background-color: rgb(140, 124, 117);
+  color: rgb(69, 60, 60);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#title {
+  background-image: -webkit-linear-gradient(92deg, rgb(39, 31, 28), #7a5225);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1 {
+  -webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.tea-info {
+  width: 400px;
+  padding: 16px;
+  border: 5px solid;
+  border-image: linear-gradient(45deg, purple, orange) 1;
+}
+
+#description {
+  float: right;
+  color: gray;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#btn {
+  padding: 8px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: background-color 200ms ease-in, color 200ms ease-out;
+  border: 2px solid white;
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#btn:hover {
+  background-color: white;
+  color: black;
 }
