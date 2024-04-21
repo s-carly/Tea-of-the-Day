@@ -8,21 +8,24 @@
   box-sizing: border-box;
 }
 
-button {
-  font: inherit;
-  cursor: pointer;
+html,
+body {
+  background: #e3caa5;
+  font-family: sans-serif;
 }
 
 .App {
-  display: grid;
-  gap: 16px;
-  place-content: center;
-  text-align: center;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   height: 100vh;
-  line-height: 1.5;
-  background-color: rgb(231, 212, 181);
-  color: rgb(160, 147, 125);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
 }
 
 #title {
@@ -31,7 +34,7 @@ button {
   -webkit-text-fill-color: transparent;
 }
 
-h1 {
+h1 #title {
   -webkit-animation: hue 10s infinite linear;
 }
 
@@ -45,12 +48,24 @@ h1 {
   }
 }
 
+.middle-container {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .tea-info {
   width: 400px;
   padding: 16px;
   border: 5px solid;
   border-image: linear-gradient(45deg, #875216, rgb(160, 147, 125)) 1;
   background-color: rgb(247, 241, 230);
+}
+
+#tea-image {
+  width: 30%;
+  height: 30%;
 }
 
 #description {

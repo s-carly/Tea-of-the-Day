@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./components/Card";
 
 const BASE_URL = "https://boonakitea.cyclic.app/api";
 
@@ -36,14 +37,13 @@ export default function Tea() {
   return (
     <>
       <h1 id='title'>Tea of the Day</h1>
-      {randomThree.map((teaObject) => (
-        <div className='tea-info' key={teaObject.id}>
-          <p id='name'>{teaObject.name}</p>
-          <p>{teaObject.origin}</p>
-          <p>{teaObject.description || "No description provided."}</p>
-        </div>
-      ))}
-
+      <div className='middle-container'>
+        {randomThree.map((teaObject) => (
+          <>
+            <Card objectInfo={teaObject} key={teaObject.id} />
+          </>
+        ))}
+      </div>
       <button id='btn' onClick={getTeaList}>
         Generate
       </button>
